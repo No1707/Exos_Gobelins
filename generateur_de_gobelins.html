@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Générateur de gobelins</title>
+</head>
+
+<body>
+  <script>
+
+    const nb_gobelin = 10;
+    let gobelins = {};
+
+    function randomInterval(min, max){
+      return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    function createName() {
+      let name = []
+
+      firstPart = Math.random() > .5 ? "B" : "G"
+
+      secondLetters = ["A", "E", "I", "O", "U", "Y"]
+      secondPart = secondLetters[Math.floor(Math.random() * secondLetters.length)]
+
+      thirdLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+      let thirdPart = ''
+      for(let i = 0; i < randomInterval(2,3); i++){
+        thirdPart += thirdLetters[Math.floor(Math.random() * thirdLetters.length)]
+      }
+
+      return thirdPart
+    }
+
+    console.log(createName())
+
+    // for(let i = 0; i <= nb_gobelin; i++){
+      
+    //   gobelins.val = `Gobelin numero ${i}`
+
+    // }
+
+    // console.log(gobelins)
+
+  </script>
+</body>
+
+</html>
