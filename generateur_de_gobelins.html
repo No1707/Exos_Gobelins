@@ -23,27 +23,32 @@
 
       firstPart = Math.random() > .5 ? "B" : "G"
 
-      secondLetters = ["A", "E", "I", "O", "U", "Y"]
-      secondPart = secondLetters[Math.floor(Math.random() * secondLetters.length)]
+      vowels = ["A", "E", "I", "O", "U", "Y"]
+      secondPart = vowels[Math.floor(Math.random() * vowels.length)]
 
-      thirdLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+      thirdLetters = ["G","B","L","N"]
       let thirdPart = ''
-      for(let i = 0; i < randomInterval(2,3); i++){
+      for(let i = 0; i < randomInterval(1,3); i++){
         thirdPart += thirdLetters[Math.floor(Math.random() * thirdLetters.length)]
+        thirdPart += vowels[Math.floor(Math.random() * vowels.length)]
       }
-
-      return thirdPart
+      name.push(firstPart, secondPart, thirdPart)
+      result = name.join("")
+      return result
     }
 
-    console.log(createName())
-
-    // for(let i = 0; i <= nb_gobelin; i++){
+    for(let i = 0; i < nb_gobelin; i++){
       
-    //   gobelins.val = `Gobelin numero ${i}`
+      let item = {
+        sex : Math.random() > .58 ? "F" : "M",
+        age : randomInterval(5, 35),
+        dents : randomInterval(17, 28)
+      }
+      
+      gobelins[createName()] = item
+    }
 
-    // }
-
-    // console.log(gobelins)
+    console.log(gobelins)
 
   </script>
 </body>
